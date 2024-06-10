@@ -1,12 +1,12 @@
-# Use an official OpenJDK runtime as a parent image
-FROM eclipse-temurin:17-jdk-alpine
+FROM maven:4.0.0-openjdk-17 AS build
+COPY . .
+RUN mvn clean package -DskipTests
 
 
 
-VOLUME /tmp
-
+FROM openjdk:17-jdk-slim
 # Copy the jar file from the target directory to the working directory in the container
-COPY target/BernabeuBack-0.0.1-SNAPSHOT.jar app.jar
+COPY target/BernabeuBack-0.0.1-SNAPSHOT.jar BernabeuBack.jar
 
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
