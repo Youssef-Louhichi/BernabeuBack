@@ -1,7 +1,7 @@
 package com.example.demo.entities;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
@@ -17,7 +17,7 @@ public class Reservation implements Serializable  {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idRes;
-	private Date date_res;
+	private LocalDate date_res;
 	private int nbjoueurs;
 	private int rate;
 	private String feedback;
@@ -44,11 +44,11 @@ public class Reservation implements Serializable  {
 		this.idRes = idRes;
 	}
 
-	public Date getDate_res() {
+	public LocalDate getDate_res() {
 		return date_res;
 	}
 
-	public void setDate_res(Date date_res) {
+	public void setDate_res(LocalDate date_res) {
 		this.date_res = date_res;
 	}
 
@@ -149,7 +149,7 @@ public class Reservation implements Serializable  {
 	
 	
 
-	public Reservation(Date date_res, int nbjoueurs, int rate, String feedback, float tarif, boolean eau, String temps,
+	public Reservation(LocalDate date_res, int nbjoueurs, int rate, String feedback, float tarif, boolean eau, String temps,
 			boolean done, boolean annule, LocalDateTime date_annulation, Client client, Terrain terrain) {
 		super();
 		this.date_res = date_res;
