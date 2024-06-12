@@ -1,7 +1,7 @@
 package com.example.demo.entities;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
