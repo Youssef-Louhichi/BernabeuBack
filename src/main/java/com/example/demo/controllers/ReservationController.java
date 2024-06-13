@@ -1,7 +1,7 @@
 package com.example.demo.controllers;
 
  
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -55,8 +55,8 @@ public class ReservationController {
 	@GetMapping("/getreservationterrainetdate")
 	public List<Reservation> getReservationByTerrainEtDate(
 		    @RequestParam("id") int id,
-		    @RequestParam("date1") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDateTime d1,
-		    @RequestParam("date2") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDateTime d2) {
+		    @RequestParam("date1") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate d1,
+		    @RequestParam("date2") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate d2) {
 		return this.irs.reservationParTerrainEtDate(id,d1,d2);
 	  
 	} 

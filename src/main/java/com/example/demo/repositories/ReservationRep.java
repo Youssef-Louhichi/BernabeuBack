@@ -1,7 +1,6 @@
 package com.example.demo.repositories;
 
-
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -19,7 +18,7 @@ public interface ReservationRep extends JpaRepository<Reservation,Integer>{
 	List<Reservation> findByClient(int client_id);
 	
 	@Query("SELECT r FROM Reservation r WHERE r.terrain.idTer=?1 and r.date_res between ?2 and ?3")
-	List<Reservation> findByTerrainAndDate(int terrain_id,LocalDateTime d1,LocalDateTime d2);
+	List<Reservation> findByTerrainAndDate(int terrain_id,LocalDate d1,LocalDate d2);
 	
 	@Query("SELECT avg(r.rate) FROM Reservation r WHERE r.terrain.idTer=?1 ")
 	float rateByTerrain(int terrain_id);
