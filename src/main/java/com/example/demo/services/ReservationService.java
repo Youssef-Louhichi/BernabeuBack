@@ -1,7 +1,6 @@
 package com.example.demo.services;
 
 import java.util.Date;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -147,7 +146,7 @@ public class ReservationService implements IReservationService{
 	
 	
 	@Override
-	public List<Reservation> reservationParTerrainEtDate(int id,LocalDate d1,LocalDate d2){
+	public List<Reservation> reservationParTerrainEtDate(int id,LocalDateTime d1,LocalDateTime d2){
 		return this.rr.findByTerrainAndDate(id, d1, d2);
 	}
 

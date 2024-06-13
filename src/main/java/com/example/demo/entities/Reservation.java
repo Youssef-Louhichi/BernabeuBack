@@ -21,9 +21,7 @@ public class Reservation implements Serializable  {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idRes;
-	@DateTimeFormat(pattern = "yyyy/MM/dd")
-    @JsonFormat(pattern = "yyyy/MM/dd")
-	private LocalDate date_res;
+	private LocalDateTime date_res;
 	private int nbjoueurs;
 	private int rate;
 	private String feedback;
@@ -50,11 +48,11 @@ public class Reservation implements Serializable  {
 		this.idRes = idRes;
 	}
 
-	public LocalDate getDate_res() {
+	public LocalDateTime getDate_res() {
 		return date_res;
 	}
 
-	public void setDate_res(LocalDate date_res) {
+	public void setDate_res(LocalDateTime date_res) {
 		this.date_res = date_res;
 	}
 
@@ -155,7 +153,7 @@ public class Reservation implements Serializable  {
 	
 	
 
-	public Reservation(LocalDate date_res, int nbjoueurs, int rate, String feedback, float tarif, boolean eau, String temps,
+	public Reservation(LocalDateTime date_res, int nbjoueurs, int rate, String feedback, float tarif, boolean eau, String temps,
 			boolean done, boolean annule, LocalDateTime date_annulation, Client client, Terrain terrain) {
 		super();
 		this.date_res = date_res;
