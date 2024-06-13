@@ -77,7 +77,7 @@ public class ReservationController {
 	
 	
 	@PostMapping("/addreservation")
-	public boolean ajouter(@RequestBody Reservation r) {
+	public Reservation ajouter(@RequestBody Reservation r) {
 		return this.irs.insertReservation(r);
 	}
 	

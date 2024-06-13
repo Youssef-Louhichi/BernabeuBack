@@ -8,7 +8,7 @@ import java.util.List;
 import com.example.demo.entities.Reservation;
 
 public interface IReservationService {
-	boolean insertReservation(Reservation r);
+	Reservation insertReservation(Reservation r);
 	Reservation updateReservation(int id,Reservation r);
 	List<Reservation> selectAll();
 	Reservation getReservationById(int id);

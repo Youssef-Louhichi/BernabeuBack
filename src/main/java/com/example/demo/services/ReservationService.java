@@ -18,13 +18,13 @@ public class ReservationService implements IReservationService{
 	private ReservationRep rr;
 
 	@Override
-	public boolean insertReservation(Reservation r) {
+	public Reservation insertReservation(Reservation r) {
 		r.setFeedback(null);
 		r.setRate(0);
 		r.setDone(false);
 		r.setAnnule(false);
 		r.setDate_annulation(null);
-		return this.rr.save(r)!=null;
+		return this.rr.save(r);
 	}
 
 	@Override
